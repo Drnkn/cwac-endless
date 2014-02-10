@@ -341,13 +341,12 @@ abstract public class EndlessAdapter extends AdapterWrapper {
 
       if (e == null) {
         adapter.appendCachedData();
+        adapter.onDataReady();
       }
       else {
         adapter.setKeepOnAppending(adapter.onException(adapter.pendingView,
                                                         e));
       }
-
-      adapter.onDataReady();
     }
   }
 
